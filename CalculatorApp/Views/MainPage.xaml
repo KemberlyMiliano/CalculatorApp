@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CalculatorApp.Views.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             BackgroundColor= "{DynamicResource BackgroundColor}"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style ApplyToDerivedTypes="True" TargetType="Button">
+                <Setter Property="WidthRequest" Value="20"/>
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="TextColor" Value="{DynamicResource TextSecondaryColor}"/>
+                <Setter Property="Margin" Value="6,15,6,15"/>
+                <Setter Property="BackgroundColor" Value= "{DynamicResource BackgroundColor}"/>
+                <Setter Property="FontFamily" Value="Sen"/>
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="sh:Shadows">
+                <Setter Property="Shades">
+                    <sh:ImmutableShades>
+                        <sh:Shade BlurRadius="20"
+                              Opacity="1"
+                              Offset="-10,-10"
+                              Color="{DynamicResource ShadowPrimaryColor}"/>
+                         <sh:Shade BlurRadius="10"
+                              Opacity="1"
+                              Offset="5.5, 8"
+                              Color="{DynamicResource ShadowSecondaryColor}"/>
+                     </sh:ImmutableShades>
+                 </Setter>
+             </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+<ScrollView>
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Switch x:Name="ModeMenuItem"
+                OnColor="Gray"
+                ThumbColor="White"
+                Grid.Column="3"
+                HorizontalOptions="EndAndExpand"
+                Margin="0,0,0,20"
+                Toggled="OnToggled"/>
+
+        <Label Text="2122"
+               FontSize="65"
+               TextColor="{DynamicResource BigNumberColor}"
+               Grid.Row="1"
+               Grid.ColumnSpan="4"
+               HorizontalTextAlignment="End"
+               FontFamily="Sen"/>
+
+        <Label Text="346+74*24"
+               TextColor="Gray"
+               FontSize="20"
+               Grid.Row="2"
+               Grid.ColumnSpan="4"
+               HorizontalTextAlignment="End"
+               Margin="0,0,0,30"
+               FontFamily="Sen"/>
+
+        <sh:Shadows Grid.Row="3">
+            <Button Text="C"
+                    TextColor="{DynamicResource TextPrimaryColor}"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="3"
+                    Grid.Column="1">
+            <Button Text="+ / -"
+                    TextColor="{DynamicResource TextPrimaryColor}"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="3"
+                    Grid.Column="2">
+            <Button Text="%"
+                    TextColor="{DynamicResource TextPrimaryColor}"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="3"
+                    Grid.Column="3">
+            <Button Text="/"
+                    TextColor="{DynamicResource TextPrimaryColor}"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="4">
+            <Button Text="7"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="4"
+                    Grid.Column="1">
+            <Button Text="8"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="4"
+                    Grid.Column="2">
+            <Button Text="9"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="4"
+                    Grid.Column="3">
+            <Button ImageSource="x"
+                    Padding="2"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="5">
+            <Button Text="4"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="5"
+                    Grid.Column="1">
+            <Button Text="5"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="5"
+                    Grid.Column="2">
+            <Button Text="6"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="5"
+                    Grid.Column="3">
+            <Button ImageSource="minus"
+                    Padding="20"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="6">
+            <Button Text="1"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="6"
+                    Grid.Column="1">
+            <Button Text="2"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="6"
+                    Grid.Column="2">
+            <Button Text="3"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="6"
+                    Grid.Column="3">
+            <Button ImageSource="plus"
+                    Padding="25"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="7">
+            <Button Text="0"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="7"
+                    Grid.Column="1">
+            <Button Text="."/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="7"
+                    Grid.Column="2">
+            <Button x:Name="DeleteButton"
+                    ImageSource="delete"/>
+        </sh:Shadows>
+
+        <sh:Shadows Grid.Row="7"
+                    Grid.Column="3">
+            <Button ImageSource="equal"
+                    Padding="25"/>
+        </sh:Shadows>
+    </Grid>
+</ScrollView>
+</ContentPage>

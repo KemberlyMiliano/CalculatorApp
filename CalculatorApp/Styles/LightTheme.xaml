@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="CalculatorApp.Styles.LightTheme">
+
+    <Color x:Key="BigNumberColor">DodgerBlue</Color>
+    <Color x:Key="BackgroundColor">#F6FBFE</Color>
+    <Color x:Key="TextPrimaryColor">DodgerBlue</Color>
+    <Color x:Key="TextSecondaryColor">Black</Color>
+    <Color x:Key="ShadowPrimaryColor">White</Color>
+    <Color x:Key="ShadowSecondaryColor">#DFF0FD</Color>
+
+</ResourceDictionary>
